@@ -43,7 +43,6 @@ public class Log {
             }
 
             if (day1 - day0 == 0) {
-                //System.out.println(roznicaMinutDwochLogowan);
                 if (roznicaMinutDwochLogowan >= 30) {
                     numberOfSession++;
                 }
@@ -55,89 +54,5 @@ public class Log {
             wynik = "False";
 
         return wynik;
-    }
-
-    public static void main(String[] args) {
-        ArrayList<String> a = new ArrayList<String>();
-        ArrayList<String> b = new ArrayList<String>();
-        ArrayList<String> c = new ArrayList<String>();
-        ArrayList<String> d = new ArrayList<String>();
-        ArrayList<String> e = new ArrayList<String>();
-        ArrayList<String> f = new ArrayList<String>();
-        ArrayList<String> g = new ArrayList<String>();
-        ArrayList<String> h = new ArrayList<String>();
-
-        a.add("2017-03-10 08:13:11");
-        a.add("2017-03-10 19:01:27");
-        a.add("2017-03-11 07:35:55");
-        a.add("2017-03-11 16:15:11");
-        a.add("2017-03-12 08:01:41");
-        a.add("2017-03-12 17:19:08");
-
-        b.add("2017-03-10 18:58:11");
-        b.add("2017-03-10 19:01:27");
-        b.add("2017-03-11 07:35:55");
-        b.add("2017-03-11 16:15:11");
-        b.add("2017-03-12 08:01:41");
-        b.add("2017-03-12 17:19:08");
-
-        c.add("2017-03-08 17:11:13");
-        c.add("2017-03-11 17:22:47");
-        c.add("2017-03-11 19:23:51");
-        c.add("2017-03-11 22:03:12");
-        c.add("2017-03-12 08:32:04");
-        c.add("2017-03-12 13:19:08");
-        c.add("2017-03-12 17:19:08");
-
-        d.add("2017-03-08 17:11:13");
-        d.add("2017-03-09 17:22:47");
-        d.add("2017-03-09 19:23:51");
-        d.add("2017-03-09 22:03:12");
-        d.add("2017-03-10 08:32:04");
-        d.add("2017-03-12 13:19:08");
-        d.add("2017-03-12 17:19:08");
-
-        e.add("2018-03-12 11:00:00");
-        e.add("2018-03-13 11:00:00");
-        e.add("2018-03-14 11:00:00");
-
-        f.add("2017-03-10 08:13:11");
-        f.add("2017-03-10 19:01:27");
-        f.add("2017-03-11 07:35:55");
-        f.add("2017-03-11 16:15:11");
-        f.add("2017-03-12 08:01:41");
-        f.add("2017-03-12 08:19:08");
-
-        g.add("2017-03-10 08:13:11");
-        g.add("2017-03-10 19:01:27");
-        g.add("2017-03-11 07:35:55");
-        g.add("2017-03-11 23:55:11");
-        g.add("2017-03-12 00:01:41");
-        g.add("2017-03-12 18:19:08");
-
-        h.add("2017-03-10 08:13:11");
-        h.add("2017-03-10 19:01:27");
-        h.add("2017-03-11 07:35:55");
-        h.add("2017-03-11 23:11:11");
-        h.add("2017-03-12 00:01:41");
-        h.add("2017-03-12 18:19:08");
-
-        System.out.println(a);
-        System.out.println(b);
-        System.out.println(c);
-        System.out.println(d);
-        System.out.println(e);
-        System.out.println(f);
-        System.out.println(g);
-        System.out.println(h);
-        System.out.println(function(a));
-        System.out.println(function(b));
-        System.out.println(function(c));
-        System.out.println(function(d));
-        System.out.println(function(e));
-        System.out.println(function(f));
-        System.out.println(function(g));
-        System.out.println(function(h));
-
     }
 }
