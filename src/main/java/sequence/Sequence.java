@@ -2,6 +2,7 @@ package sequence;
 
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.Optional;
 import java.util.Set;
 
 
@@ -12,26 +13,23 @@ public class Sequence {
 
     public static ArrayList<Integer> function(ArrayList<Integer> A, ArrayList<Integer> B) {
         ArrayList<Integer> c = new ArrayList<Integer>();
-        int number = 1;
         HashMap<Integer, Integer> liczbaWystapien = new HashMap<Integer, Integer>();
-        for (int i = 0; i < B.size(); i++) {
-            int n = B.get(i);
+        for (Integer element : B) {
+            int n = element;
             if (liczbaWystapien.containsKey(n)) {
-                number = (liczbaWystapien.get(n)) + 1;
+                int number = (liczbaWystapien.get(n)) + 1;
                 liczbaWystapien.put(n, number);
             } else {
-                liczbaWystapien.put(n, number);
+                liczbaWystapien.put(n, 1);
             }
-            number = 1;
         }
 
+
         Set key = liczbaWystapien.keySet();
-        for (int j = 0; j < A.size(); j++) {
-            if (!(key.contains(A.get(j)))) {
-                c.add(A.get(j));
-            }
-            if (key.contains(A.get(j)) && !(czyPierwsza(liczbaWystapien.get(A.get(j))))) {
-                c.add(A.get(j));
+
+        for (Integer element : A) {
+            if (!(czyPierwsza(liczbaWystapien.getOrDefault(element, 0)))) {
+                c.add(element);
             }
         }
         return c;
