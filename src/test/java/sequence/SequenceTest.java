@@ -80,7 +80,7 @@ public class SequenceTest {
 
         result.add(13);
 
-        Assert.assertEquals(function(first, second), result);
+        Assert.assertEquals(result, function(first, second));
 
     }
 
