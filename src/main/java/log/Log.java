@@ -1,34 +1,31 @@
 package log;
 
-import java.util.ArrayList;
-
 /**
- * Created by aga on 25.04.18.
+ * Created by aga on 06.05.18.
  */
 public class Log {
-    public static String function(ArrayList<String> a) {
-        String wynik;
-        int numberOfDays = 0;
-        int numberOfSession = 0;
+    private final int day;
+    private final int hour;
+    private final int min;
 
-        for (int i = a.size() - 1; i > 0; i--) {
-            Porownywacz porownywacz = new Porownywacz(a.get(i), a.get(i - 1));
+    public Log(String log) {
+        day = Integer.valueOf(log.substring(8, 10));
+        hour = Integer.valueOf(log.substring(11, 13));
+        min = Integer.valueOf(log.substring(14, 16));
+    }
 
-            if (porownywacz.czyLogiRozniaSieOWiecejNizDzien()) {
-                break;
-            }
-            if (porownywacz.czyLogiRozniaSieOJedenDzien()) {
-                numberOfDays++;
-            }
-            if (porownywacz.czyLogiRozniaSiePrzynajmniejOPolGodziny()) {
-                numberOfSession++;
-            }
+    public boolean czyLogiRozniaSieOWiecejNizDzien(Log previousLog) {
+        return day - previousLog.day > 1;
+    }
+
+    public boolean czyLogiRozniaSieOJedenDzien(Log previousLog) {
+        return day - previousLog.day == 1;
+    }
+
+    public boolean czyLogiRozniaSiePrzynajmniejOPolGodziny(Log previousLog) {
+        if(day - previousLog.day == 1) {
+            return !(hour == 0 && previousLog.hour == 23) || (60 - previousLog.min) + min >= 30;
         }
-        if (numberOfDays >= 2 && numberOfSession >= 5) {
-            wynik = "True";
-        } else
-            wynik = "False";
-
-        return wynik;
+        return (hour * 60) + min - ((previousLog.hour * 60) + previousLog.min) >= 30;
     }
 }

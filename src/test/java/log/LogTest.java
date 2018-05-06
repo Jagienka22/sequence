@@ -5,7 +5,7 @@ import org.junit.Test;
 
 import java.util.ArrayList;
 
-import static log.Log.function;
+import static log.LogManager.function;
 
 
 /**

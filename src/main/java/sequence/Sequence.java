@@ -24,9 +24,6 @@ public class Sequence {
             }
         }
 
-
-        Set key = liczbaWystapien.keySet();
-
         for (Integer element : A) {
             if (!(czyPierwsza(liczbaWystapien.getOrDefault(element, 0)))) {
                 c.add(element);
